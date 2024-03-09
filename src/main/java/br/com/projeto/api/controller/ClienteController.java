@@ -8,6 +8,7 @@ import br.com.projeto.api.repositories.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
@@ -26,6 +27,9 @@ public class ClienteController {
         return repository.findAll();
     }
 
+    @PutMapping("/")
+    public Cliente editar(@RequestBody Cliente c){
+        return repository.save(c);
+    }
 
-    
 }
