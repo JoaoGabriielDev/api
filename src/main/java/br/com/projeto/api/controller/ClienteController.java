@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-
-
 @RestController
 public class ClienteController {
 
@@ -22,10 +20,10 @@ public class ClienteController {
     public Cliente cadastrar(@RequestBody Cliente c){
         return repository.save(c);
     }
-
+    
     @GetMapping("/")
-    public String test(){
-        return "Hello World";
+    public Iterable<Cliente> buscar(){
+        return repository.findAll();
     }
 
 
