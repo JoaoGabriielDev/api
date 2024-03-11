@@ -19,17 +19,17 @@ public class ClienteController {
     @Autowired
     private ClienteRepository repository;
 
-    @PostMapping("/")
+    @PostMapping("/cadastrar")
     public Cliente cadastrar(@RequestBody Cliente c){
         return repository.save(c);
     }
     
-    @GetMapping("/")
+    @GetMapping("/cliente")
     public Iterable<Cliente> buscar(){
         return repository.findAll();
     }
 
-    @PutMapping("/")
+    @PutMapping("/editar")
     public Cliente editar(@RequestBody Cliente c){
         return repository.save(c);
     }
